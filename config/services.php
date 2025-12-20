@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    'sendgrid' => [
+        'key' => env('SENDGRID_API_KEY'),
+        'from_email' => env('SENDGRID_FROM_EMAIL'),
+        'from_name' => env('SENDGRID_FROM_NAME', config('app.name')),
+    ],
+
 ];
