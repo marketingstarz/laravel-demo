@@ -1,47 +1,73 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Create Post</title>
-    <style>
-        body { font-family: system-ui, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; }
-        label { display:block; margin-top: 14px; font-weight: 600; }
-        input, textarea { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
-        .row { display:flex; gap: 10px; margin-top: 16px; }
-        a.button, button { background:#111; color:#fff; border:0; padding:10px 14px; border-radius:8px; text-decoration:none; cursor:pointer; }
-        a.button.secondary { background:#444; }
-        .errors { background:#ffecec; border:1px solid #f5b5b5; padding:10px 12px; border-radius:8px; margin: 14px 0; }
-    </style>
-</head>
-<body>
+<x-app-layout>
+    <x-slot name="header">
+        <div class="flex items-center justify-between">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Create Post') }}
+            </h2>
 
-<h1>Create Post</h1>
+            <a href="{{ route('posts.index') }}"
+               class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                Back to Posts
+            </a>
+        </div>
+    </x-slot>
 
-@if ($errors->any())
-    <div class="errors">
-        <strong>Fix these:</strong>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+
+                    @if ($errors->any())
+                        <div class="mb-6 rounded-md border border-red-200 bg-red-50 p-4">
+                            <p class="font-semibold text-red-800">Fix these:</p>
+                            <ul class="mt-2 list-disc list-inside text-red-700 space-y-1">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form method="POST" action="{{ route('posts.store') }}" class="space-y-6">
+                        @csrf
+
+                        <div>
+                            <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                            <input
+                                id="title"
+                                name="title"
+                                type="text"
+                                value="{{ old('title') }}"
+                                required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                            />
+                        </div>
+
+                        <div>
+                            <label for="body" class="block text-sm font-medium text-gray-700">Body</label>
+                            <textarea
+                                id="body"
+                                name="body"
+                                rows="6"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                            >{{ old('body') }}</textarea>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <button type="submit"
+                                    class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">
+                                Create
+                            </button>
+
+                            <a href="{{ route('posts.index') }}"
+                               class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                Cancel
+                            </a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
     </div>
-@endif
-
-<form method="POST" action="{{ route('posts.store') }}">
-    @csrf
-
-    <label>Title</label>
-    <input name="title" value="{{ old('title') }}" required>
-
-    <label>Body</label>
-    <textarea name="body" rows="6">{{ old('body') }}</textarea>
-
-    <div class="row">
-        <button type="submit">Create</button>
-        <a class="button secondary" href="{{ route('posts.index') }}">Cancel</a>
-    </div>
-</form>
-
-</body>
-</html>
+</x-app-layout>
