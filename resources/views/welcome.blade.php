@@ -274,9 +274,9 @@
             <div class="h-14.5 hidden lg:block"></div>
         @endif
 
-        <!-- Start of Zendesk Widget script -->
-        <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=e75ad847-10cf-4126-87fa-b7f6e7236880"> </script>
-        <!-- End of Zendesk Widget script -->
+        <!-- Start of epic-world-market Zendesk Widget script -->
+        <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=90c70107-2305-4c13-bb7b-a76abd158177"> </script>
+        <!-- End of epic-world-market Zendesk Widget script -->
 
     </body>
 </html>
