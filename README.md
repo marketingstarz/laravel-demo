@@ -1,59 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# laravel-sandbox
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project is a small sandbox application used to better understand how common user issues show up across different systems.
 
-## About Laravel - Matty Style v8
+It is not a production app and is not meant to be deployed. Its purpose is learning, comparison, and practicing how to reason through real customer-facing issues.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Live sandbox URL:
+https://sandbox.epicworldmarket.com/
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The application intentionally mirrors situations where users:
+- can’t log in
+- don’t understand what they’re seeing
+- believe something is broken
+- reach out to support for clarification or help
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Support Tooling and Context
 
-## Learning Laravel
+This sandbox also reflects a typical customer support environment.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- Customer conversations are handled through **Zendesk Messenger chat**
+- Issues that require follow-up or investigation are tracked in **Jira**
+- The goal is to understand how user-reported problems move from:
+  - a chat message
+  - to a support ticket
+  - to internal investigation or escalation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+This reinforces thinking in terms of:
+- user symptoms
+- clear communication
+- actionable information for the next team
 
-## Laravel Sponsors
+![Laravel Sandbox Screenshot](./screenshot.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Why This Project Exists
 
-### Premium Partners
+Support teams deal with the same customer problems no matter what technology is used underneath.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+This sandbox exists to compare how things like:
+- logins
+- sessions
+- access control
+- unexpected logouts
 
-## Contributing
+behave in a different backend environment.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+The goal is not to build features, but to recognize patterns that show up in support tickets.
 
-## Code of Conduct
+## What This Helps Me Do (Support Perspective)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Working with this sandbox helps me:
 
-## Security Vulnerabilities
+- Recognize login and session issues regardless of framework
+- Understand that user complaints are often the same across systems
+- Separate “account problems” from “UI problems”
+- Avoid assuming a problem is framework-specific
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+From a support standpoint, this builds confidence in diagnosing issues without relying on one stack.
 
-## License
+## How This Relates to Real Support Work
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Customers don’t care what framework is used.
+They report symptoms.
+
+This project reinforces that:
+- The same issues appear in different systems
+- The same questions need to be asked
+- The same reasoning process applies
+
+That mindset is more important than knowing any single tool.
+
+## Relationship to Other Projects
+
+This sandbox is completely separate from other training apps in my other repos.
+
+## Status
+
+This is an ongoing sandbox project.
+
+It exists to build familiarity with how systems behave when things break, and to strengthen problem-solving skills relevant to application support and analyst roles.
