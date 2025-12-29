@@ -2,7 +2,7 @@
 
 This project is a small sandbox application used to better understand how common user issues show up across different systems.
 
-It is not a production app and is not meant to be deployed. Its purpose is learning, comparison, and practicing how to reason through real customer-facing issues.
+It is not a production app and is not meant to be deployed. Its purpose is to simulate real customer-facing issues.
 
 Live sandbox URL:
 https://sandbox.epicworldmarket.com/
@@ -70,10 +70,10 @@ That mindset is more important than knowing any single tool.
 
 ## Relationship to Other Projects
 
-This sandbox is completely separate from other training apps in my other repos.
+This sandbox is a standalone environment separate from my other training apps.
 
 ## Status
 
 This is an ongoing sandbox project.
 
-It exists to build familiarity with how systems behave when things break, and to strengthen problem-solving skills relevant to application support and analyst roles.
+It exists to build familiarity with how systems behave when things break, and to strengthen ticket triage and issue diagnosis relevant to application support and analyst roles.
