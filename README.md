@@ -13,6 +13,8 @@ The application intentionally mirrors situations where users:
 - believe something is broken
 - reach out to support for clarification or help
 
+![Laravel Sandbox Screenshot](./screenshot.png)
+
 ## Support Tooling and Context
 
 This sandbox also reflects a typical customer support environment.
@@ -28,8 +30,6 @@ This reinforces thinking in terms of:
 - user symptoms
 - clear communication
 - actionable information for the next team
-
-![Laravel Sandbox Screenshot](./screenshot.png)
 
 ## Why This Project Exists
 
